@@ -1,6 +1,6 @@
-import { UserButton } from '@clerk/nextjs'
 import { Logo } from '../logo/logo'
 import { SearchBar } from './ui/search-bar'
+import { Actions } from './ui/actions'
 
 export function Navbar () {
   return (
@@ -8,9 +8,7 @@ export function Navbar () {
       <nav className="w-full flex items-center justify-between">
         <Logo />
         <SearchBar />
-        <UserButton
-          afterSignOutUrl='/'
-        />
+        <Actions />
       </nav>
     </header>
   )
