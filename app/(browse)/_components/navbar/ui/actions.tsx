@@ -17,7 +17,7 @@ export async function Actions () {
         )
       }
       {
-        !!user && (
+        user && (
           <div className='flex items-center gap-x-4'>
             <Button size={'sm'} variant={'ghost'} className='text-muted-foreground hover:text-primary' asChild>
               <Link href={`/user/${user.username}`}>
