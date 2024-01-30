@@ -1,7 +1,7 @@
-import { Button } from '@/components/ui/button'
 import { isFollowingUser } from '@/lib/follow-service'
 import { getUserByUsername } from '@/lib/user-service'
 import { notFound } from 'next/navigation'
+import { Actions } from './_components/actions'
 
 interface UserPageProps {
   params: {
@@ -15,13 +15,16 @@ export default async function UserPage ({ params: { username } }: UserPageProps)
     notFound()
   }
   const isFollowing = await isFollowingUser(user.id)
-  const label = isFollowing ? 'Unfollow' : 'Follow'
+
   return (
     <section className='flex flex-col gap-y-4'>
       <h1 className="text-2xl font-bold">{user?.username}</h1>
       <p>id: {user.id}</p>
       <article>
-        <Button>{label}</Button>
+        <Actions
+          isFollowing={isFollowing}
+          userId={user.id}
+        />
       </article>
     </section>
   )

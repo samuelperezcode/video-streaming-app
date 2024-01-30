@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
-
+import { Toaster } from 'sonner'
 import { ClerkProvider } from '@clerk/nextjs'
 import { dark } from '@clerk/themes'
 
@@ -25,6 +25,7 @@ export default function RootLayout ({
            forcedTheme='dark'
            storageKey='telenique-theme'
           >
+            <Toaster theme='light' position='bottom-center' />
             {children}
           </ThemeProvider>
         </body>
