@@ -47,7 +47,7 @@ export function ToggleSkeleton () {
   return (
     <div className='hidden lg:flex p3 pt-4 pl-6 mb-2 items-center justify-between w-full'>
       <Skeleton className='h-6 w-[100px]' />
-      <Skeleton className='h-6 w-6' />
+      <Skeleton className='h-6 w-6 p-2' />
     </div>
   )
 }
